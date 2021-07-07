@@ -7,9 +7,11 @@ import Messages from '../Messages/Messages';
 import InfoBar from '../InfoBar/InfoBar';
 import Input from '../Input/Input';
 
+
+
 import './Chat.css';
 
-// const ENDPOINT = 'https://project-chat-application.herokuapp.com/';
+
 // const ENDPOINT = "localhost:8080";
 const ENDPOINT = "https://saurabhchatapp.herokuapp.com/";
 
@@ -56,14 +58,20 @@ const Chat = ({ location }) => {
   }
 
   return (
+    <>
     <div className="outerContainer">
+    <h1 style={{ color: "white",position: 'absolute',top: '80px', left: '430px',fontSize:'50px'}}><b> Welcome , {name}</b></h1>
       <div className="container">
           <InfoBar room={room} />
           <Messages messages={messages} name={name} />
           <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
       </div>
       <TextContainer users={users} user={name}/>
+      <h2 style={{ color: "white",position: 'absolute',bottom: '40px', left: '390px',fontSize:'25px'}}>Created with React, Express, Node and Socket.IO <span role="img" aria-label="emoji">❤️</span></h2>
     </div>
+    
+    </>
+    
   );
 }
 
